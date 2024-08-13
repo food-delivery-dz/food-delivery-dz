@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Information</title>
+  <link rel="stylesheet" href="./styles.css"> 
+</head>
+
+<body>
+  <!-- Your HTML content -->
+  <div class="container">
+    <h1>اقضلي العاصمة</h1>
+    <br><br>
+    <h3>معلومات الطلب</h3>
+
+    <div class="order-info">
+      <div class="info-section">
+
+        <p>اختر الدائرة</p>
+        <select class="minimal">
+          <option>-- اختر --</option>
+          <option>الحراش</option>
+          <option> الدار البيضاء</option>
+          <option>درارية</option>
+          <option>الرويبة</option>
+          <option>الشراقة</option>
+          <option> بئر توتة</option>
+          <option>بئر مراد رايس</option>
+          <option> باب الوادي</option>
+          <option>براقي</option>
+          <option>بوزريعة</option>
+          <option>حسين داي</option>
+          <option>زرالدة</option>
+          <option> سيدي امحمد</option>
+        </select>
+        <br><br>
+
+        <label for="destination">معلومات الوجهة (يجب ادخال عنوان المنزل)</label>
+        <textarea id="destination" placeholder="..."></textarea>
+      </div>
+
+      <div class="info-section">
+        <label for="phone-number">رقم الهاتف</label>
+        <input id="phone-number" placeholder="...">
+      </div>
+
+      <div class="info-section">
+        <label for="order-details">المطلوب</label>
+        <textarea id="order-details" rows="5" placeholder="..."></textarea>
+      </div>
+
+    </div>
+
+    <div class="delivery-info">
+      <div class="price">
+        <span>سعر التوصيل :</span>
+        <span>300 DA</span>
+      </div>
+      <div class="time">
+        <span>25 - 35 m</span>
+      </div>
+      <button class="submit-btn">إرسال الطلب</button>
+    </div>
+  </div>
+
+  <script type="module" src="./script.js"></script>
+  <script type="module" src="./firebase-api.js"></script>
+</body>
+
+</html>
