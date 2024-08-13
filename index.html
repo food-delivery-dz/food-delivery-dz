@@ -38,17 +38,17 @@
         <br><br>
 
         <label for="destination">معلومات الوجهة (يجب ادخال عنوان المنزل)</label>
-        <textarea id="destination" placeholder="..."></textarea>
+        <textarea id="destination" placeholder="..." required></textarea>
       </div>
 
       <div class="info-section">
         <label for="phone-number">رقم الهاتف</label>
-        <input id="phone-number" placeholder="...">
+        <input id="phone-number" placeholder="..." placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required>
       </div>
 
       <div class="info-section">
         <label for="order-details">المطلوب</label>
-        <textarea id="order-details" rows="5" placeholder="..."></textarea>
+        <textarea id="order-details" rows="5" placeholder="..." required></textarea>
       </div>
 
     </div>
