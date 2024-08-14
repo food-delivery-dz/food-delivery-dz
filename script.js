@@ -43,7 +43,7 @@ function sendOrder(order) {
     .then((order) => { 
       // update the same record to set uid 
       update(ref(database, `order/${order.key}`),{uid: order.key}).then(()=>{ 
-        alert("تم إرسال الطلب بنجاح!"); 
+        alert("تم إرسال الطلب في أقل من ساعة سوف يتم توصيل الطلب و شكرا!"); 
       }) 
     }) 
     .catch((error) => { 
