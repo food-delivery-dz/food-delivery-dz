@@ -53,8 +53,6 @@ function sendOrder(order) {
       alert("تم إرسال الطلب error!"); 
     }); 
   
- 
-  clearInputs(); 
 } 
  
 function clearInputs() { 
