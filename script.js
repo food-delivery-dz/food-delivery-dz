@@ -45,6 +45,7 @@ function sendOrder(order) {
     .then((order) => { 
       // update the same record to set uid 
       update(ref(database, `order/${order.key}`),{uid: order.key}).then(()=>{ 
+        clearInputs(); 
         alert("تم إرسال الطلب في أقل من ساعة سوف يتم توصيل الطلب و شكرا!"); 
       }) 
     }) 
@@ -73,10 +74,9 @@ submitButton.onclick = function (e) {
   if (destinationInput.value.length > 0) {
     // The variable is an array and not empty
 
-    clearInputs(); 
-  const orderData = getOrderData(); 
-  sendOrder(orderData); 
     
+  const orderData = getOrderData(); 
+  sendOrder(orderData);
   }
 
   
