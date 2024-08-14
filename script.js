@@ -69,6 +69,21 @@ function clearInputs() {
 // Events 
 submitButton.onclick = function (e) { 
   e.preventDefault(); 
+
+  if (destinationInput.value.length > 0) {
+    // The variable is an array and not empty
+
+    clearInputs(); 
   const orderData = getOrderData(); 
   sendOrder(orderData); 
+    
+  }
+
+  
+
+  
+
+
+
+  
 };
