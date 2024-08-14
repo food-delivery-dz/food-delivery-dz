@@ -61,8 +61,7 @@ function clearInputs() {
   destinationInput.value = ""; 
   orderDetailsInput.value = ""; 
   phoneNumberInput.value = ""; 
-  selectInput.value = "-- اختر --"; 
-  destinationInput.focus(); 
+  selectInput.value = "-- اختر --";  
 } 
  
  
@@ -72,12 +71,25 @@ function clearInputs() {
 submitButton.onclick = function (e) { 
   e.preventDefault(); 
 
-  if (destinationInput.value.length > 0) {
-    // The variable is an array and not empty
-
+  if (selectInput.value.length > 0) {
+    if (destinationInput.value.length > 0) {
+      if (phoneNumberInput.value.length > 0) {
+        if (orderDetailsInput.value.length > 0) {
+  
+          const orderData = getOrderData(); 
+          sendOrder(orderData);
     
-  const orderData = getOrderData(); 
-  sendOrder(orderData);
+        }else {
+          orderDetailsInput.focus();
+        }
+      }else {
+        phoneNumberInput.focus();
+      } 
+    }else {
+      destinationInput.focus();
+    } 
+  }else {
+    selectInput.focus();
   }
 
   
