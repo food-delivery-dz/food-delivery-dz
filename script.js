@@ -40,7 +40,7 @@ function getOrderData() {
 } 
  
 function sendOrder(order) { 
-  set(ref(db, 'newOrder'), order);
+  set(ref(db, "newOrder"), order);
   push(ref(database, "order"), order) 
     .then((order) => { 
       // update the same record to set uid 
