@@ -41,13 +41,8 @@ function getOrderData() {
 function sendOrder(order) { 
   set(ref(database, 'newOrder'), order)
   .then(() => {
-    console.log("Order added successfully.");
-  })
-  .catch((error) => {
-    console.error("Error adding order: ", error);
-  });
-  
-  push(ref(database, "order"), order) 
+
+    push(ref(database, "order"), order) 
     .then((order) => { 
       // update the same record to set uid 
       update(ref(database, `order/${order.key}`),{uid: order.key}).then(()=>{ 
@@ -58,6 +53,13 @@ function sendOrder(order) {
       console.error("Error writing new order to Firebase Database", error); 
       alert("تم إرسال الطلب error!"); 
     }); 
+    
+  })
+  .catch((error) => {
+    console.error("Error adding order: ", error.code, error.message);
+  });
+  
+  
  
   clearInputs(); 
 } 
@@ -76,7 +78,6 @@ function clearInputs() {
 // Events 
 submitButton.onclick = function (e) { 
   e.preventDefault(); 
-  alert("تم إرسال");
   const orderData = getOrderData(); 
   sendOrder(orderData); 
 };
