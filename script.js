@@ -39,12 +39,19 @@ function getOrderData() {
 } 
  
 function sendOrder(order) { 
-  set(ref(database, "newOrder"), order)
+  set(ref(database, 'newOrder'), order)
+  .then(() => {
+    console.log("Order added successfully.");
+  })
+  .catch((error) => {
+    console.error("Error adding order: ", error);
+  });
+  
   push(ref(database, "order"), order) 
     .then((order) => { 
       // update the same record to set uid 
       update(ref(database, `order/${order.key}`),{uid: order.key}).then(()=>{ 
-        alert("تم إرسال الطلب في أقل من ساعة سوف ي2تم توصيل الطلب و شكرا!"); 
+        alert("تم إرسال الطلب في أقل من ساعة سوف يتم توصيل الطلب و شكرا!"); 
       }) 
     }) 
     .catch((error) => { 
