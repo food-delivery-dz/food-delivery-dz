@@ -4,13 +4,14 @@ import {
   push, 
   ref, 
   update, 
+  set, 
 } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-database.js"; 
 import { firebaseConfig } from "./firebase-api.js"; 
  
 // Initialize Firebase 
 const app = initializeApp(firebaseConfig); 
 const database = getDatabase(app); 
-const db = getDatabase(app); 
+
  
 // Selectors 
 const submitButton = document.querySelector(".submit-btn"); 
@@ -40,7 +41,7 @@ function getOrderData() {
 } 
  
 function sendOrder(order) { 
-  set(ref(db, "newOrder"), order);
+  set(ref(database, "newOrder"), order);
   push(ref(database, "order"), order) 
     .then((order) => { 
       // update the same record to set uid 
