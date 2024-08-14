@@ -76,6 +76,7 @@ function clearInputs() {
 // Events 
 submitButton.onclick = function (e) { 
   e.preventDefault(); 
+  alert("تم إرسال");
   const orderData = getOrderData(); 
   sendOrder(orderData); 
 };
