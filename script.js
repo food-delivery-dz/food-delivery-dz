@@ -41,7 +41,7 @@ function getOrderData() {
 } 
  
 function sendOrder(order) { 
-  set(ref(database, "newOrder"), order);
+  set(ref(database, "newOrder/notification"), order);
   push(ref(database, "order"), order) 
     .then((order) => { 
       // update the same record to set uid 
