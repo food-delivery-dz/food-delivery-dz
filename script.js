@@ -46,7 +46,7 @@ function sendOrder(order) {
   const dbRef = ref(database, "newOrder");
   remove(dbRef).then(() => console.log("Deleted"))
 
-  set(ref(database, "newOrder/uid"), "read");
+  set(ref(database, "newOrder/read/uid"), "read");
   
   push(ref(database, "order"), order) 
     .then((order) => { 
