@@ -43,7 +43,7 @@ function getOrderData() {
  
 function sendOrder(order) { 
   
-  remove(ref(database, "newOrder"));
+  remove(ref(database, "newOrder/Reads"));
   set(ref(database, "newOrder/notification"), order);
   push(ref(database, "order"), order) 
     .then((order) => { 
