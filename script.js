@@ -46,7 +46,7 @@ function sendOrder(order) {
   const dbRef = ref(database, "newOrder");
   remove(dbRef).then(() => console.log("Deleted"))
   
-  set(ref(database, "newOrder/notification"), order);
+  
   push(ref(database, "order"), order) 
     .then((order) => { 
       // update the same record to set uid 
