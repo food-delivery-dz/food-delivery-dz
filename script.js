@@ -4,7 +4,8 @@ import {
   push, 
   ref, 
   update, 
-  set, 
+  set,
+  remove, 
 } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-database.js"; 
 import { firebaseConfig } from "./firebase-api.js"; 
  
@@ -41,6 +42,8 @@ function getOrderData() {
 } 
  
 function sendOrder(order) { 
+  
+  remove(ref(database, "newOrder"));
   set(ref(database, "newOrder/notification"), order);
   push(ref(database, "order"), order) 
     .then((order) => { 
