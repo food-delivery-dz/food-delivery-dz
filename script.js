@@ -43,7 +43,7 @@ function getOrderData() {
  
 function sendOrder(order) { 
 
-  const dbRef = ref(database, "/newOrder/");
+  const dbRef = ref(database, "newOrder");
   remove(dbRef).then(() => console.log("Deleted"))
   
   set(ref(database, "newOrder/notification"), order);
